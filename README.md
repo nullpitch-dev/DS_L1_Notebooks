@@ -15,5 +15,8 @@
   – 항목 X 구매 시 Y 포함하는 경우와 Y가 임의 구매되는 경우의 비<br>
 
 
-[apriori, association_rules 포함 문제]<br>
+[apriori, association_rules 포함 문제]
   - #02 : [4]
+
+[annova test 포함 문제]
+  -#02 : [3] (MultiComparison 포함)
