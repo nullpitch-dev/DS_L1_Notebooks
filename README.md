@@ -13,3 +13,7 @@
 * 향상도<br>
   – Lift = P(Y | X) / P(Y) = P(X ∩ Y) / P(X)P(Y)<br>
   – 항목 X 구매 시 Y 포함하는 경우와 Y가 임의 구매되는 경우의 비<br>
+
+
+[apriori, association_rules 포함 문제]<br>
+  - #02 : [4]
