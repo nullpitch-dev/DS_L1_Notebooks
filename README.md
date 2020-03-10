@@ -15,8 +15,14 @@
   – 항목 X 구매 시 Y 포함하는 경우와 Y가 임의 구매되는 경우의 비<br>
 
 
+[annova test 포함 문제]
+  <ul> #02 : [3] (MultiComparison 포함)</ul>
+
 [apriori, association_rules 포함 문제]<br>
   <ul> #02 : [4]</ul>
 
-[annova test 포함 문제]
-  <ul> #02 : [3] (MultiComparison 포함)</ul>
+[LogisticRegression 포함 문제]
+  <ul> #03 : [6]</ul>
+
+[ttest_ind 포함 문제]
+  <ul> #03 : [5]</ul>
