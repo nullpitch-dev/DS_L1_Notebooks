@@ -19,8 +19,8 @@
   #01[2], #03[5]
 
 ### [Support, Confidence, Lift 개념]
-  * 지지도 
-    – Support = P(X ∩ Y)   
+  * 지지도  
+    – Support = P(X ∩ Y)  
     – 전체 거래 중 항목 X, Y 동시 포함 거래 정도  
     – 전체 구매도 경향 파악  
   * 신뢰도  
