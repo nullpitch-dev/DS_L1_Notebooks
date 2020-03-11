@@ -1,6 +1,6 @@
 # DS_L1_Notebooks
 
-[annova test]
+##[annova test]
   <ul> #02 : [3] (MultiComparison 포함)</ul>
 
 [apriori, association_rules]<br>
