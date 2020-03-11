@@ -1,7 +1,8 @@
 # DS_L1_Notebooks
 
 ### [annova test]
-  #02[3] (MultiComparison 포함)
+  #02[3] (MultiComparison 포함)  
+  #05[3]
 
 ### [apriori, association_rules]
   #02[4]
