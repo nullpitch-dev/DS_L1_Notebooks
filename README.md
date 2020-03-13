@@ -6,12 +6,6 @@
 ### [apriori, association_rules]
   #02[4]
 
-### [datetime]
-  #01[3], #01[4], #05[1], #05[2], #05[4]
-
-### [isin]
-  #13[0]
-
 ### [KMeans]
   #01[3]
 
@@ -40,3 +34,13 @@
 ### [if condition 주의]  
   - 0 < 1 & 0 < 2 → 0 < (1 & 0) < 2 → 0 < 0 < 2 → False  
   - 0 < 1 and 0 < 2 → (0 < 1) and (0 < 2) → True
+
+### [datetime]
+  #01[3], #01[4], #05[1], #05[2], #05[4]
+
+### [isin]
+  #13[0]
+
+### [Aggregation - Category values in one list item]  
+  #12[4]
+
