@@ -6,17 +6,23 @@
 ### [apriori, association_rules]
   #02[4]
 
+### [dummy variables]  
+  #15[8]
+
 ### [KMeans]
   #01[3]
 
 ### [LinearRegression]
-  #05[4]
+  #05[4], #15[8]
 
 ### [LogisticRegression]
   #03[6]
 
+### [mean_squared_error]
+  #15[8]
+
 ### [ttest_ind]
-  #01[2], #03[5]
+  #01[2], #03[5], #15[6]
 
 ### [Support, Confidence, Lift 개념]
   * 지지도  
@@ -31,16 +37,19 @@
     – Lift = P(Y | X) / P(Y) = P(X ∩ Y) / P(X)P(Y)  
     – 항목 X 구매 시 Y 포함하는 경우와 Y가 임의 구매되는 경우의 비  
 
-### [if condition 주의]  
-  - 0 < 1 & 0 < 2 → 0 < (1 & 0) < 2 → 0 < 0 < 2 → False  
-  - 0 < 1 and 0 < 2 → (0 < 1) and (0 < 2) → True
-
 ### [datetime]
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
-### [isin]
-  #13[0]
+### [fillna]  
+  #15[0], #15[8]
 
-### [Aggregation - Category values in one list item]  
+### [if condition 주의]  
+  - 0 < 1 & 0 < 2 → 0 < (1 & 0) < 2 → 0 < 0 < 2 → False  
+  - 0 < 1 and 0 < 2 → (0 < 1) and (0 < 2) → True  
+
+### [isin]
+  #13[0], #15[0]
+
+### [aggregation - category values into one list item]  
   #12[4]
 
