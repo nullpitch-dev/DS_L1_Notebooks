@@ -6,6 +6,9 @@
 ### [apriori, association_rules]
   #02[4]
 
+### [corr]
+  #08[1]
+
 ### [dummy variables]  
   #15[8]
 
@@ -13,16 +16,16 @@
   #01[3]
 
 ### [LinearRegression]
-  #05[4], #15[8]
+  #05[4], #08[2], #08[5], #15[8]
 
 ### [LogisticRegression]
   #03[6]
 
-### [mean_squared_error]
-  #15[8]
+### [mean_squared_error, root mean_squared_error]
+  #08[3], #15[8]
 
 ### [PCA, StandardScaler]
-  #11[3], #11[4]
+  #08[4], #08[5], #11[3], #11[4]
 
 ### [ttest_ind]
   #01[2], #03[5], #15[6]
