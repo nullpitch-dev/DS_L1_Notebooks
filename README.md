@@ -21,6 +21,9 @@
 ### [mean_squared_error]
   #15[8]
 
+### [PCA, StandardScaler]
+  #11[3], #11[4]
+
 ### [ttest_ind]
   #01[2], #03[5], #15[6]
 
