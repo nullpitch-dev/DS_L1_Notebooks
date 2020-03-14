@@ -30,6 +30,9 @@
 ### [ttest_ind]
   #01[2], #03[5], #15[6]
 
+### [quantile]
+  #01[1]
+  
 ---
 
 ### [Support, Confidence, Lift 개념]
