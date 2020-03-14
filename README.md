@@ -41,6 +41,9 @@
 
 ---
 
+### [aggregation - category values into one list item]  
+  #12[4]
+
 ### [datetime]
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
@@ -53,7 +56,4 @@
 
 ### [isin]
   #13[0], #15[0]
-
-### [aggregation - category values into one list item]  
-  #12[4]
 
