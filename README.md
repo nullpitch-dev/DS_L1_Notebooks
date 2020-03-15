@@ -16,7 +16,7 @@
   #01[3]
 
 ### [LinearRegression]
-  #05[4], #08[2], #08[5], #15[8]
+  #01[4], #05[4], #08[2], #08[5], #15[8]
 
 ### [LogisticRegression]
   #03[6]
@@ -53,6 +53,9 @@
 ### [aggregation - category values into one list item]  
   #12[4]
 
+### [array handling - unique values, counts, find index with value]
+  #01[3]
+
 ### [datetime]
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
@@ -65,4 +68,7 @@
 
 ### [isin]
   #13[0], #15[0]
+
+### [string handling - zfill]
+  #01[3]
 
