@@ -51,6 +51,10 @@
     – Lift = P(Y | X) / P(Y) = P(X ∩ Y) / P(X)P(Y)  
     – 항목 X 구매 시 Y 포함하는 경우와 Y가 임의 구매되는 경우의 비  
 
+### [AUC - ROC 개념]
+  * TPR(True Positive Rate) = Recall = Sensitivity = TP / (TP + FN)  
+  * Specificity = TN / (FP + TN)  
+  * FPR(False Positive Rate) = FP / (FP + TN) = 1 - Specificity  
 ---
 
 ### [aggregation - category values into one list item]  
