@@ -7,31 +7,37 @@
   #02[4]
 
 ### [corr]
-  #08[1]
+  #08[1]  
 
 ### [dummy variables]  
-  #15[8]
+  #06[2~5 processing], #15[8]  
 
 ### [KMeans]
-  #01[3]
+  #01[3]  
 
 ### [LinearRegression]
-  #01[4], #05[4], #08[2], #08[5], #15[8]
+  #01[4], #05[4], #08[2], #08[5], #15[8]  
 
 ### [LogisticRegression]
-  #03[6]
+  #03[6], #06[2], #06[3]  
 
 ### [mean_squared_error, root mean_squared_error]
-  #08[3], #15[8]
+  #08[3], #15[8]  
+
+### [metrics - precision_score, ROC Curve, AUC]
+  #06[4]
+
+### [Odds Ratio]
+  #06[2]  
 
 ### [PCA, StandardScaler]
-  #08[4], #08[5], #11[3], #11[4]
+  #08[4], #08[5], #11[3], #11[4]  
 
 ### [ttest_ind]
-  #01[2], #03[5], #15[6]
+  #01[2], #03[5], #15[6]  
 
 ### [quantile]
-  #01[1]
+  #01[1], #06[1]
   
 ---
 ### [Odds Ratio 개념]
