@@ -36,6 +36,7 @@
 ---
 ### [Odds Ratio 개념]
   * Odds Ratio = P(success) / P(failure)  
+  * Logistic Regression의 coef는 log(p / (1 - p))이므로, exp(coef)를 한 값은 Odds Ratio  
 
 ### [Support, Confidence, Lift 개념]
   * 지지도  
