@@ -35,7 +35,7 @@
   
 ---
 ### [Odds Ratio 개념]
-  * Odds Ratio = P(success) / P(failrue)  
+  * Odds Ratio = P(success) / P(failure)  
 
 ### [Support, Confidence, Lift 개념]
   * 지지도  
