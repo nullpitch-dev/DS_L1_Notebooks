@@ -7,7 +7,7 @@
   #02[4]
 
 ### [corr]
-  #08[1]  
+  #03[4], #08[1]  
 
 ### [dummy variables]  
   #06[2~5 processing], #15[8]  
@@ -66,11 +66,20 @@
 ### [aggregation - category values into one list item]  
   #02[0], #12[4]
 
-### [array handling - unique values, counts, find index with value]
+### [array handling - unique values and counts for each value]
   #01[3]
+
+### [array handling - get index with certain value or condition]
+  #01[3], #03[6]
+
+### [array handling - join array items into one string]
+  #03[6]
 
 ### [datetime]
   #01[3], #01[4], #05[1], #05[2], #05[4]
+
+### [enumerate and list comprehension]
+  #03[6]
 
 ### [fillna]  
   #15[0], #15[8]
