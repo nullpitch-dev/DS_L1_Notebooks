@@ -64,7 +64,7 @@
 ---
 
 ### [aggregation - category values into one list item]  
-  #12[4]
+  #02[0], #12[4]
 
 ### [array handling - unique values, counts, find index with value]
   #01[3]
@@ -81,6 +81,9 @@
 
 ### [isin]
   #13[0], #15[0]
+
+## [rank]
+  #02[2]  
 
 ### [string handling - zfill]
   #01[3]
