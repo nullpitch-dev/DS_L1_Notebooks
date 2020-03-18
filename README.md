@@ -78,7 +78,7 @@
 ### [array handling - join array items into one string]
   #03[6]
 
-### [datetime]
+### [datetime, relativedelta, timedelta]
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
 ### [enumerate and list comprehension]
