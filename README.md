@@ -1,22 +1,25 @@
 # DS_L1_Notebooks
 
 ### [annova test]
-  #02[3] (MultiComparison 포함), #05[3]
+  #02[3] (MultiComparison 포함), #04[2], #05[3]
 
 ### [apriori, association_rules]
   #02[4]
 
 ### [corr]
-  #03[4], #08[1]  
+  #03[4], #04[3], #08[1]  
 
 ### [dummy variables]  
-  #06[2~5 processing], #15[8]  
+  #04[3], #06[2~5 processing], #15[8]  
 
 ### [KMeans]
   #01[3]  
 
 ### [LinearRegression]
   #01[4], #05[4], #08[2], #08[5], #15[8]  
+
+### [Linear Regression - OLS]
+  #04[3], #04[4]  
 
 ### [LogisticRegression]
   #03[6], #06[2], #06[3]  
@@ -34,7 +37,7 @@
   #08[4], #08[5], #11[3], #11[4]  
 
 ### [ttest_ind]
-  #01[2], #03[5], #15[6]  
+  #01[2], #03[5], #04[1], #15[6]  
 
 ### [quantile]
   #01[1], #06[1]
@@ -79,7 +82,7 @@
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
 ### [enumerate and list comprehension]
-  #03[6]
+  #03[6], #04[3]
 
 ### [fillna]  
   #15[0], #15[8]
@@ -93,6 +96,9 @@
 
 ### [rank]
   #02[2]  
+
+### [Series to DataFrame transform]
+  #04[3]
 
 ### [string handling - zfill]
   #01[3]  
