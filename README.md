@@ -43,6 +43,14 @@
   #01[1], #06[1]
   
 ---
+### [Chi2 Test 개념]
+  * Tests if there is a relationship between two categorical variables  
+  * The data is usually displayed in a cross-tabulation format  
+    with each row representing a level (group) for one variable  
+    and each column representing a level (group) for another variable  
+  * Compares the observed observations to the expected observations
+  * The H0: There is no relationship between variable one and variable two.
+
 ### [Odds Ratio 개념]
   * Odds Ratio = P(success) / P(failure)  
   * Logistic Regression의 coef는 log(p / (1 - p))이므로, exp(coef)를 한 값은 Odds Ratio  
