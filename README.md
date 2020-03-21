@@ -6,11 +6,14 @@
 ### [apriori, association_rules]
   #02[4]
 
+### [chi2_contingency]
+  #07[3]
+
 ### [corr]
   #03[4], #04[3], #08[1]  
 
 ### [dummy variables]  
-  #04[3], #06[2~5 processing], #15[8]  
+  #04[3], #06[2~5 processing], #07[0], #15[8]  
 
 ### [KMeans]
   #01[3]  
@@ -19,13 +22,13 @@
   #01[4], #05[4], #08[2], #08[5], #15[8]  
 
 ### [Linear Regression - OLS]
-  #04[3], #04[4]  
+  #04[3], #04[4], #07[4]  
 
 ### [LogisticRegression]
   #03[6], #06[2], #06[3]  
 
 ### [mean_squared_error, root mean_squared_error]
-  #08[3], #15[8]  
+  #07[5], #08[3], #15[8]  
 
 ### [metrics - precision_score, ROC Curve, AUC]
   #06[4]
@@ -101,6 +104,12 @@
 
 ### [isin]
   #13[0], #15[0]  
+
+### [math.log10(), np.sqrt(), 10 ** x]
+  #07[4], #07[5]
+
+### [pivot_table]
+  #07[3]
 
 ### [rank]
   #02[2]  
