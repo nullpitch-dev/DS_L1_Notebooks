@@ -49,6 +49,10 @@
   #01[1], #06[1]
   
 ---
+### [ANOVA Test 개념]
+  * 분산을 고려했을 때 표본들의 평균이 같다고 할 수 있는지 검증  
+  * H0 : 표본집단들의 모집단 평균이 같다
+
 ### [Chi2 Test 개념]
   * Tests if there is a relationship between two categorical variables  
   * The data is usually displayed in a cross-tabulation format  
