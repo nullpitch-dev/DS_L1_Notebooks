@@ -21,6 +21,9 @@
 ### [LinearRegression]
   #01[4], #05[4], #08[2], #08[5], #15[8]  
 
+### [LinearRegression - Score (r-squred)]
+  #08[5]  
+
 ### [Linear Regression - OLS]
   #04[3], #04[4], #07[4]  
 
@@ -93,7 +96,7 @@
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
 ### [enumerate and list comprehension]
-  #03[6], #04[3]
+  #03[6], #04[3], #08[5]  
 
 ### [fillna]  
   #15[0], #15[8]
