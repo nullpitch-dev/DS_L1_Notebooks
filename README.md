@@ -1,7 +1,7 @@
 # DS_L1_Notebooks
 
 ### [annova test]
-  #02[3] (MultiComparison 포함), #04[2], #05[3]
+  #02[3] (MultiComparison 포함), #04[2], #05[3], #09[3]  
 
 ### [apriori, association_rules]
   #02[4]
@@ -9,11 +9,14 @@
 ### [chi2_contingency]
   #07[3]
 
+### [coefficient of variation]
+  #09[1]  
+
 ### [corr]
   #03[4], #04[3], #08[1]  
 
 ### [dummy variables]  
-  #04[3], #06[2~5 processing], #07[0], #15[8]  
+  #04[3], #06[2~5 processing], #07[0], #09[4], #15[8]  
 
 ### [KMeans]
   #01[3]  
@@ -28,7 +31,7 @@
   #04[3], #04[4], #07[4]  
 
 ### [LogisticRegression]
-  #03[6], #06[2], #06[3]  
+  #03[6], #06[2], #06[3], #09[4]  
 
 ### [mean_squared_error, root mean_squared_error]
   #07[5], #08[3], #15[8]  
