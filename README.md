@@ -1,7 +1,7 @@
 # DS_L1_Notebooks
 
 ### [annova test]
-  #02[3] (MultiComparison 포함), #04[2], #05[3], #09[3]  
+  #02[3] (MultiComparison 포함), #04[2], #05[3], #09[3], #11[2]  
 
 ### [apriori, association_rules]
   #02[4], #10[4]  
@@ -20,6 +20,9 @@
 
 ### [KMeans]
   #01[3], #10[2]  
+
+### [KNN]
+  #11[4]  
 
 ### [LinearRegression]
   #01[4], #05[4], #08[2], #08[5], #15[8]  
