@@ -16,13 +16,13 @@
   #03[4], #04[3], #08[1], #12[2]  
 
 ### [dummy variables]  
-  #04[3], #06[2~5 processing], #07[0], #09[4], #15[8]  
+  #04[3], #06[2~5 processing], #07[0], #09[4], #13[4], #15[8]  
 
 ### [KMeans]
   #01[3], #10[2]  
 
 ### [KNN]
-  #11[4]  
+  #11[4], #13[1]  
 
 ### [LinearRegression]
   #01[4], #05[4], #08[2], #08[5], #15[8]  
@@ -34,7 +34,7 @@
   #04[3], #04[4], #07[4]  
 
 ### [LogisticRegression]
-  #03[6], #06[2], #06[3], #09[4], #10[3], #12[5]  
+  #03[6], #06[2], #06[3], #09[4], #10[3], #12[5], #13[4]  
 
 ### [mean_squared_error, root mean_squared_error]
   #07[5], #08[3], #15[8]  
@@ -50,6 +50,9 @@
 
 ### [ttest_ind]
   #01[2], #03[5], #04[1], #10[1], #12[3], #15[6]  
+
+### [ttest_rel]
+  #13[3]
 
 ### [quantile]
   #01[1], #06[1]
@@ -110,11 +113,14 @@
 ### [datetime, relativedelta, timedelta]
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
+### [drop_duplicate]
+  #13[0]  
+
 ### [enumerate and list comprehension]
   #03[6], #04[3], #08[5], #10[2], #10[3]  
 
 ### [fillna]  
-  #15[0], #15[8]
+  #13[0], #15[0], #15[8]
 
 ### [frozenset: how to get elements]  
   #10[4]  
@@ -137,6 +143,12 @@
 
 ### [Series to DataFrame transform]
   #04[3]
+
+### [set_index]
+  #13[1]
+
+### [sort_index : DO NOT use]
+  #13[0]
 
 ### [string handling - zfill]
   #01[3]  
