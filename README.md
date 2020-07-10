@@ -65,6 +65,13 @@
   * 분산을 고려했을 때 표본들의 평균이 같다고 할 수 있는지 검증  
   * H0 : 표본집단들의 모집단 평균이 같다
 
+### [COMPARISON	T-TEST vs. ANOVA]
+  * T-test is a hypothesis test that is used to compare the means of two populations.
+  * ANOVA is a statistical technique that is used to compare the means of more than two populations.
+  * Test statistic:
+    - T-test : (x ̄-µ)/(s/√n)
+    - ANOVA : Between Sample Variance/Within Sample Variance
+
 ### [Chi2 Test 개념]
   * Tests if there is a relationship between two categorical variables  
   * The data is usually displayed in a cross-tabulation format  
