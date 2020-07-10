@@ -120,6 +120,9 @@
 ### [array handling - join array items into one string]
   #03[6]
 
+### [bool - True/False 1/0 처리]
+  * (ser >= 5) + 0
+  * np.where(ser >= 5, 1, 0)
 ### [crosstab]
   pd.crosstab(df["season"], df["holiday"])
 
