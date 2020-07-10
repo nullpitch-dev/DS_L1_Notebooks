@@ -120,6 +120,9 @@
 ### [array handling - join array items into one string]
   #03[6]
 
+### [crosstab]
+  pd.crosstab(df["season"], df["holiday"])
+
 ### [datetime, relativedelta, timedelta]
   #01[3], #01[4], #05[1], #05[2], #05[4]
 
@@ -169,3 +172,12 @@
 ### [string handling - zfill]
   #01[3]  
 
+### [string replace]
+  hours.str.replace(pat = "X", repl = "")
+
+### [to_datetime]
+  df["datetime"] = pd.to_datetime(df["datetime"])
+  df["month"] = df["datetime"].dt.month
+
+### [value_counts]
+  df["season"].value_counts(normalize = True)
