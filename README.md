@@ -145,6 +145,12 @@
 ### [math.log10(), np.sqrt(), 10 ** x]
   #07[4], #07[5]
 
+### [np.where]
+  np.where(np.array([3, 5, 7, 9]) >= 7, "YES", "NO")
+
+### [np.r_]
+  np.r_[1:5, 7, 10, 15:20]
+  
 ### [pivot_table]
   #07[3]
 
