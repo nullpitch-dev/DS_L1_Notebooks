@@ -179,8 +179,8 @@
   hours.str.replace(pat = "X", repl = "")
 
 ### [to_datetime]
-  df["datetime"] = pd.to_datetime(df["datetime"])
-  df["month"] = df["datetime"].dt.month
+  * df["datetime"] = pd.to_datetime(df["datetime"])
+  * df["month"] = df["datetime"].dt.month
 
 ### [value_counts]
   df["season"].value_counts(normalize = True)
