@@ -26,31 +26,31 @@ data_corolla2 = pd.read_csv(url_corolla_2)
 #####################################################################################################
 
 
-# dummy variables ##############################
+# dummy variables #######################################################################################
 df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_], drop_first=True)
 
 
-# elif in lambda ##############################
+# elif in lambda #######################################################################################
 df_elif = df_elif.assign(new_col=df_elif["Col_A"].apply(lambda x: "value_1" if x <= condi_1 else (
                                                                   "value_2" if x >= condi_2 else "middle")))
 
 
-# enumerate and list comprehension ##############################
+# enumerate and list comprehension ####################################################################
 # 결과 중 특정 조건을 만족하는 변수명 찾기
 idx = [i for i, values in enumerate(model_result) if values < 0]
 vars_found = ", ".join([X_cols[i] for i in idx])
 
 
-# Merge #######################################
+# Merge ################################################################################################
 df_merge = pd.merge(data_left, data_right[["Col_A", "Col_B"]], how="left", left_on="Key_left", right_on="Key_right")
 
 
-# Pivot_table for Association_rules ################################
+# Pivot_table for Association_rules ######################################################################
 pivot = df_pivot.pivot_table(index="index_col", columns="column_col", aggfunc="size", fill_value=0)
 pivot = (pivot >= 1) + 0  # 1 이상은 1로 0은 0으로 만드는 방법
 
 
-# Rank  #######################################
+# Rank  ################################################################################################
 df_rank = df_rank.assign(rank=df_rank.rank(ascending=False, method="min"))
 
 
@@ -167,4 +167,8 @@ model = lr.fit(train_X, train_y)
 from scipy.stats import ttest_ind
 
 p_val, t_val = ttest_ind(cd_y['high_p'], cd_n['high_p'])
+###########################################################################################################
+
+
+# //////// ################################################################################################
 ###########################################################################################################
