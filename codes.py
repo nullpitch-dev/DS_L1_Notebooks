@@ -142,6 +142,10 @@ ols_result.pvalues # p-value가 필요하면
 ols_result.tvalues # t-value가 필요하면
 ols_result.rsquared # R2가 필요하면
 ols_result.rsquared_adj # Adjusted R2가 필요하면
+
+# predict
+test_X = pd.DataFrame([[1, 2, 3, 4, 5]], columns=['a', 'b', 'c', 'd', 'e'])
+pred = ols_result.predict(test_X)
 ###########################################################################################################
 
 
