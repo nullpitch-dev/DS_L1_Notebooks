@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import math
-
-# Ex02 Data ###########################################################################################
+######### ######### ######### ######### ######### ######### ######### ##########
+# Ex02 Data ####################################################################
 url_pur = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ds_purchase_log.csv'
 url_cus = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ds_customer_mst.csv'
 url_pro = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ds_product_mst.csv'
@@ -10,48 +10,64 @@ data_pur = pd.read_csv(url_pur)
 data_cus = pd.read_csv(url_cus)
 data_pro = pd.read_csv(url_pro)
 
-# Ex03 Data ###########################################################################################
+# Ex03 Data ####################################################################
 url_antibio = "https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/Antibiotic_70K_patinets.csv"
 data_antibio = pd.read_csv(url_antibio)
 
-# Ex04 Data ###########################################################################################
+# Ex04 Data ####################################################################
 url_corolla_1 = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/corolla_1.csv'
 url_corolla_2 = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/corolla_2.csv'
 data_corolla1 = pd.read_csv(url_corolla_1)
 data_corolla2 = pd.read_csv(url_corolla_2)
 
+# Ex05 Data ####################################################################
+url_ecommerce = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ecommerce_transaction.csv'
+data_ecommerce = pd.read_csv(url_ecommerce)
 
-#####################################################################################################
-#####################################################################################################
-#####################################################################################################
-
-
-# dummy variables #######################################################################################
-df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_], drop_first=True)
-
-
-# elif in lambda #######################################################################################
-df_elif = df_elif.assign(new_col=df_elif["Col_A"].apply(lambda x: "value_1" if x <= condi_1 else (
-                                                                  "value_2" if x >= condi_2 else "middle")))
+################################################################################
+################################################################################
+################################################################################
 
 
-# enumerate and list comprehension ####################################################################
+# dummy variables ##############################################################
+df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_],
+                          drop_first=True)
+
+
+# elif in lambda ###############################################################
+df_elif = df_elif.assign(new_col=df_elif["Col_A"].apply(
+                            lambda x: "value_1" if x <= condi_1 else (
+                                      "value_2" if x >= condi_2 else "middle")))
+
+
+# enumerate and list comprehension #############################################
 # 결과 중 특정 조건을 만족하는 변수명 찾기
 idx = [i for i, values in enumerate(model_result) if values < 0]
 vars_found = ", ".join([X_cols[i] for i in idx])
 
 
-# Merge ################################################################################################
-df_merge = pd.merge(data_left, data_right[["Col_A", "Col_B"]], how="left", left_on="Key_left", right_on="Key_right")
+# Merge ########################################################################
+df_merge = pd.merge(data_left, data_right[["Col_A", "Col_B"]], how="left",
+                    left_on="Key_left", right_on="Key_right")
 
 
-# Pivot_table for Association_rules ######################################################################
-pivot = df_pivot.pivot_table(index="index_col", columns="column_col", aggfunc="size", fill_value=0)
+# Pivot_table for Association_rules ############################################
+pivot = df_pivot.pivot_table(index="index_col", columns="column_col",
+                             aggfunc="size", fill_value=0)
 pivot = (pivot >= 1) + 0  # 1 이상은 1로 0은 0으로 만드는 방법
 
 
-# Rank  ################################################################################################
+# Rank  ########################################################################
 df_rank = df_rank.assign(rank=df_rank.rank(ascending=False, method="min"))
+
+
+# to_datetime  #################################################################
+df_dt = pd.DataFrame(['2017-01-07', '2019-05-30', '2020-10-05'], columns=['date'])
+df_dt['date'] = pd.to_datetime(df_dt['date'])
+df_dt = df_dt.assign(plus7year=df_dt['date'].apply(lambda x: pd.to_datetime(
+                                                    str(x.year + 7) +
+                                                    str(x.month).zfill(2) +
+                                                    str(x.day).zfill(2))))
 
 
 #####################################################################################################
