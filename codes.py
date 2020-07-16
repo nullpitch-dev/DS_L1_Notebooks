@@ -68,6 +68,7 @@ df_dt = df_dt.assign(plus7year=df_dt['date'].apply(lambda x: pd.to_datetime(
                                                     str(x.year + 7) +
                                                     str(x.month).zfill(2) +
                                                     str(x.day).zfill(2))))
+df_dt['date'].dt.dayofweek  # 요일 (월요일이 0)
 
 
 #####################################################################################################
