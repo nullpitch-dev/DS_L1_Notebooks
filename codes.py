@@ -62,7 +62,8 @@ df_rank = df_rank.assign(rank=df_rank.rank(ascending=False, method="min"))
 
 
 # to_datetime  #################################################################
-df_dt = pd.DataFrame(['2017-01-07', '2019-05-30', '2020-10-05'], columns=['date'])
+df_dt = pd.DataFrame(['2017-01-07', '2019-05-30', '2020-10-05'],
+                     columns=['date'])
 df_dt['date'] = pd.to_datetime(df_dt['date'])
 df_dt = df_dt.assign(plus7year=df_dt['date'].apply(lambda x: pd.to_datetime(
                                                     str(x.year + 7) +
@@ -71,12 +72,12 @@ df_dt = df_dt.assign(plus7year=df_dt['date'].apply(lambda x: pd.to_datetime(
 df_dt['date'].dt.dayofweek  # 요일 (월요일이 0)
 
 
-#####################################################################################################
-#####################################################################################################
-#####################################################################################################
+################################################################################
+################################################################################
+################################################################################
 
 
-# ANOVA #####################################################################################################
+# ANOVA ########################################################################
 # ANOVA Test 개념
 # 분산을 고려했을 때 표본들의 평균이 같다고 할 수 있는지 검증
 # H0 : 표본집단들의 모집단 평균이 같다
@@ -91,17 +92,19 @@ df_dt['date'].dt.dayofweek  # 요일 (월요일이 0)
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 
-result = ols(formula="dependent)var ~ C(independent_var1) + independent_var2", data=df_anova).fit()
+result = ols(formula="dependent)var ~ C(independent_var1) + independent_var2",
+             data=df_anova).fit()
 anova_table = anova_lm(result)
 print(anova_table)
-###########################################################################################################
+################################################################################
 
 
-# MultiComparison ########################################################################################
+# MultiComparison ##############################################################
 # 사후검정 #######################################
 from statsmodels.stats.multicomp import MultiComparison
 
-comparison = MultiComparison(data=df_mc["dependent_var"], groups=df_mc["independent_var"])
+comparison = MultiComparison(data=df_mc["dependent_var"],
+                             groups=df_mc["independent_var"])
 print(comparison.tukeyhsd())
 
 """
@@ -116,10 +119,10 @@ group1 group2  meandiff  p-adj    lower      upper    reject
 # meandiff = group2_mean - group1_mean
 # reject = True : mean is different
 """
-###########################################################################################################
+################################################################################
 
 
-# Association Rule #####################################################################################
+# Association Rule #############################################################
 # [Support, Confidence, Lift 개념]
 #   지지도
 #     – Support = P(X ∩ Y)
@@ -135,20 +138,25 @@ group1 group2  meandiff  p-adj    lower      upper    reject
 
 from mlxtend.frequent_patterns import apriori, association_rules
 
-freq_items = apriori(pivot, min_support=0.001, use_colnames=True) # Pivot_table 참고
-asso_rules = association_rules(freq_items, metric="confidence", min_threshold=0.001)
+# Pivot_table 참고
+freq_items = apriori(pivot, min_support=0.001, use_colnames=True)
+asso_rules = association_rules(freq_items, metric="confidence",
+                               min_threshold=0.001)
 
-asso_rules = asso_rules.assign(check=asso_rules["antecedents"].apply(lambda x: "XXX" in x)) # XXX가 포함된 항목 check
-asso_rules = asso_rules[asso_rules["check"]].sort_values(by="lift", ascending=False)
-###########################################################################################################
+# XXX가 포함된 항목 check
+asso_rules = asso_rules.assign(check=asso_rules["antecedents"].apply(
+                                                          lambda x: "XXX" in x)) 
+asso_rules = asso_rules[asso_rules["check"]].sort_values(by="lift",
+                                                         ascending=False)
+################################################################################
 
 
-# Correlation ##########################################################################################
+# Correlation ##################################################################
 df_corr_result = df_corr[['var1', 'var2']].corr(method='pearson')
-###########################################################################################################
+################################################################################
 
 
-# Liner Regression ##########################################################################################
+# Liner Regression #############################################################
 from statsmodels.api import add_constant, OLS
 
 train_X = add_constant(train_X)
@@ -163,21 +171,22 @@ ols_result.rsquared_adj # Adjusted R2가 필요하면
 # predict
 test_X = pd.DataFrame([[1, 2, 3, 4, 5]], columns=['a', 'b', 'c', 'd', 'e'])
 pred = ols_result.predict(test_X)
-###########################################################################################################
+################################################################################
 
 
-# Logistic Regression ##########################################################################
+# Logistic Regression ##########################################################
 from sklearn.linear_model import LogisticRegression
 
 train_X = df_lr['dep_A', 'dep_B', 'dep_C', 'dep_D', 'dep_E']
 train_y = df_lr['indep']
 
-lr = LogisticRegression(C=100000, random_state=1234, penalty='l2', solver='newton-cg')
+lr = LogisticRegression(C=100000, random_state=1234, penalty='l2',
+                        solver='newton-cg')
 model = lr.fit(train_X, train_y)
-###########################################################################################################
+################################################################################
 
 
-# T-Test ################################################################################################
+# T-Test #######################################################################
 # H0 : 두 집단의 평균이 같다 (다르다고 할 수 없다)
 # [COMPARISON T-TEST vs. ANOVA]
 #     T-test is a hypothesis test that is used to compare the means of two populations.
@@ -188,8 +197,8 @@ model = lr.fit(train_X, train_y)
 from scipy.stats import ttest_ind
 
 p_val, t_val = ttest_ind(cd_y['high_p'], cd_n['high_p'])
-###########################################################################################################
+################################################################################
 
 
-# //////// ################################################################################################
-###########################################################################################################
+# //////// #####################################################################
+################################################################################
