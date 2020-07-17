@@ -29,6 +29,10 @@ data_ecommerce = pd.read_csv(url_ecommerce)
 ################################################################################
 
 
+# concat #######################################################################
+df_concat = pd.concat([df1, df2])
+
+
 # dummy variables ##############################################################
 df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_],
                           drop_first=True)
@@ -196,7 +200,12 @@ model = lr.fit(train_X, train_y)
 #       * ANOVA : Between Sample Variance/Within Sample Variance
 from scipy.stats import ttest_ind
 
-p_val, t_val = ttest_ind(cd_y['high_p'], cd_n['high_p'])
+p_val, t_val = ttest_ind(df_a['col'], df_b['col'])
+################################################################################
+
+
+# Quantile $$$##################################################################
+quantile = df_quantile['col'].quantile([0.25, 0.5, 0.75])
 ################################################################################
 
 
