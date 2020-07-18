@@ -66,6 +66,9 @@ df_rank = df_rank.assign(rank=df_rank.rank(ascending=False, method="min"))
 
 
 # rename #######################################################################
+df_rename = df_rename.rename(columns={'col_a_before': 'col_a_after',
+                                      'col_b_before': 'col_b_after'})
+
 
 # to_datetime  #################################################################
 df_dt = pd.DataFrame(['2017-01-07', '2019-05-30', '2020-10-05'],
