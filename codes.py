@@ -80,6 +80,13 @@ df_dt = df_dt.assign(plus7year=df_dt['date'].apply(lambda x: pd.to_datetime(
                                                     str(x.day).zfill(2))))
 df_dt['date'].dt.dayofweek  # 요일 (월요일이 0)
 
+# timedelta ####################################################################
+df_dt = df_dt.assign(gap=df_dt.apply(lambda x:
+                                    (x['time2'] - x['time1']).days * 24 * 3600 +
+                                    (x['time2'] - x['time1']).seconds, axis=1))
+df_dt = df_dt.assign(pay=df_dt.apply(lambda x:
+                             'type1' if x['gap'] >= 3600 else 'type2', axis=1))
+
 
 ################################################################################
 ################################################################################
