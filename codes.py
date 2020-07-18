@@ -176,7 +176,7 @@ from
 ################################################################################
 
 
-# Liner Regression #############################################################
+# Linear Regression (OSL) ######################################################
 from statsmodels.api import add_constant, OLS
 
 train_X = add_constant(train_X)
@@ -193,6 +193,16 @@ test_X = pd.DataFrame([[1, 2, 3, 4, 5]], columns=['a', 'b', 'c', 'd', 'e'])
 pred = ols_result.predict(test_X)
 ################################################################################
 
+
+# Linear Regression ############################################################
+from sklearn.linear_model import LinearRegression
+
+lr = LinearRegression()
+model = lr.fit(train_X, train_y)  # train_X는 Matrix여야 함 (m X n)
+
+model.coef_  # coefficient
+model.predict([[1], [2], [10], [50], [100]])  # predict
+################################################################################
 
 # Logistic Regression ##########################################################
 from sklearn.linear_model import LogisticRegression
