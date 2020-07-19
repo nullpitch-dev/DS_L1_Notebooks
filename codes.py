@@ -33,48 +33,54 @@ data_pop = pd.read_csv(url_pop, encoding='utf-8')
 ################################################################################
 
 
-# concat #######################################################################
+### concat #####################################################################
 df_concat = pd.concat([df1, df2])
 
 
-# dummy variables ##############################################################
+### dummy variables ############################################################
 df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_],
                           drop_first=True)
 
 
-# elif in lambda ###############################################################
+### elif in lambda #############################################################
 df_elif = df_elif.assign(new_col=df_elif["Col_A"].apply(
                             lambda x: "value_1" if x <= condi_1 else (
                                       "value_2" if x >= condi_2 else "middle")))
 
 
-# enumerate and list comprehension #############################################
+### enumerate and list comprehension ###########################################
 # 결과 중 특정 조건을 만족하는 변수명 찾기
 idx = [i for i, values in enumerate(model_result) if values < 0]
 vars_found = ", ".join([X_cols[i] for i in idx])
 
+### log10 계산###################################################################
+series_log = df_log['Col_A'].apply(lambda x: math.log10(x))
+series_revert = series_log.apply(lambda x: 10 ** x)
 
-# Merge ########################################################################
+
+### Merge ######################################################################
 df_merge = pd.merge(data_left, data_right[["Col_A", "Col_B"]], how="left",
                     left_on="Key_left", right_on="Key_right")
+# key column이 없고 index 기준으로 merge 할 때:
+df_merge = pd.merge(data_left, data_right[['Col_A']], how='left',
+                     left_index=True, right_index=True)
 
-
-# Pivot_table for Association_rules ############################################
+### Pivot_table for Association_rules ##########################################
 pivot = df_pivot.pivot_table(index="index_col", columns="column_col",
                              aggfunc="size", fill_value=0)
 pivot = (pivot >= 1) + 0  # 1 이상은 1로 0은 0으로 만드는 방법
 
 
-# Rank  ########################################################################
+### Rank  ######################################################################
 df_rank = df_rank.assign(rank=df_rank.rank(ascending=False, method="min"))
 
 
-# rename #######################################################################
+### rename #####################################################################
 df_rename = df_rename.rename(columns={'col_a_before': 'col_a_after',
                                       'col_b_before': 'col_b_after'})
 
 
-# to_datetime  #################################################################
+### to_datetime  ###############################################################
 df_dt = pd.DataFrame(['2017-01-07', '2019-05-30', '2020-10-05'],
                      columns=['date'])
 df_dt['date'] = pd.to_datetime(df_dt['date'])
@@ -84,7 +90,7 @@ df_dt = df_dt.assign(plus7year=df_dt['date'].apply(lambda x: pd.to_datetime(
                                                     str(x.day).zfill(2))))
 df_dt['date'].dt.dayofweek  # 요일 (월요일이 0)
 
-# timedelta ####################################################################
+### timedelta ##################################################################
 df_dt = df_dt.assign(gap=(df_dt['time2'] - df_dt['time1']).dt.days * 24 * 3600 +
                          (df_dt['time2'] - df_dt['time1']).dt.seconds)
 df_dt = df_dt.assign(pay=df_dt.apply(lambda x:
@@ -96,7 +102,7 @@ df_dt = df_dt.assign(pay=df_dt.apply(lambda x:
 ################################################################################
 
 
-# ANOVA ########################################################################
+### ANOVA ######################################################################
 # ANOVA Test 개념
 # 분산을 고려했을 때 표본들의 평균이 같다고 할 수 있는지 검증
 # H0 : 표본집단들의 모집단 평균이 같다
@@ -115,11 +121,8 @@ result = ols(formula="dependent)var ~ C(independent_var1) + independent_var2",
              data=df_anova).fit()
 anova_table = anova_lm(result)
 print(anova_table)
-################################################################################
 
-
-# MultiComparison ##############################################################
-# 사후검정 #######################################
+# MultiComparison, 사후검정#######################################################
 from statsmodels.stats.multicomp import MultiComparison
 
 comparison = MultiComparison(data=df_mc["dependent_var"],
@@ -141,7 +144,7 @@ group1 group2  meandiff  p-adj    lower      upper    reject
 ################################################################################
 
 
-# Association Rule #############################################################
+### Association Rule ###########################################################
 # [Support, Confidence, Lift 개념]
 #   지지도
 #     – Support = P(X ∩ Y)
@@ -169,27 +172,31 @@ asso_rules = asso_rules[asso_rules["check"]].sort_values(by="lift",
                                                          ascending=False)
 ################################################################################
 
-# CChi2 Test ###################################################################
+### CChi2 Test #################################################################
 #  * Tests if there is a relationship between two categorical variables.
 #  * The data is usually displayed in a cross-tabulation format
 #    with each row representing a level (group) for one variable
 #    and each column representing a level (group) for another variable
 #  * Compares the observed observations to the expected observations
 #  * The H0: There is no relationship between variable one and variable two.
+
+from scipy.stats import chi2_contingency
+
+chi2, p_val, dof, expected = chi2_contingency(pivot)
 ################################################################################
 
 
-# Correlation ##################################################################
+### Correlation ################################################################
 df_corr_result = df_corr[['var1', 'var2']].corr(method='pearson')
 ################################################################################
 
 
-# K-Means ######################################################################
+### K-Means ####################################################################
 //
 ################################################################################
 
 
-# Linear Regression (OSL) ######################################################
+### Linear Regression (OSL) ####################################################
 from statsmodels.api import add_constant, OLS
 
 train_X = add_constant(train_X)
@@ -207,7 +214,7 @@ pred = ols_result.predict(test_X)
 ################################################################################
 
 
-# Linear Regression ############################################################
+### Linear Regression ##########################################################
 from sklearn.linear_model import LinearRegression
 
 lr = LinearRegression()
@@ -215,9 +222,10 @@ model = lr.fit(train_X, train_y)  # train_X는 Matrix여야 함 (m X n)
 
 model.coef_  # coefficient
 model.predict([[1], [2], [10], [50], [100]])  # predict
+model.predict([['a', 'b', 'c']])  # predict
 ################################################################################
 
-# Logistic Regression ##########################################################
+### Logistic Regression ########################################################
 from sklearn.linear_model import LogisticRegression
 
 train_X = df_lr['dep_A', 'dep_B', 'dep_C', 'dep_D', 'dep_E']
@@ -229,7 +237,7 @@ model = lr.fit(train_X, train_y)
 ################################################################################
 
 
-# T-Test #######################################################################
+### T-Test #####################################################################
 # H0 : 두 집단의 평균이 같다 (다르다고 할 수 없다)
 # [COMPARISON T-TEST vs. ANOVA]
 #     T-test is a hypothesis test that is used to compare the means of two populations.
@@ -243,10 +251,10 @@ p_val, t_val = ttest_ind(df_a['col'], df_b['col'])
 ################################################################################
 
 
-# Quantile #####################################################################
+### Quantile ###################################################################
 quantile = df_quantile['col'].quantile([0.25, 0.5, 0.75])
 ################################################################################
 
 
-# //////// #####################################################################
+### //////// ###################################################################
 ################################################################################
