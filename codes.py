@@ -24,6 +24,10 @@ data_corolla2 = pd.read_csv(url_corolla_2)
 url_ecommerce = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ecommerce_transaction.csv'
 data_ecommerce = pd.read_csv(url_ecommerce)
 
+# Ex07 Data ####################################################################
+url_pop = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/R_pop_stat.csv'
+data_pop = pd.read_csv(url_pop, encoding='utf-8')
+
 ################################################################################
 ################################################################################
 ################################################################################
@@ -163,6 +167,15 @@ asso_rules = asso_rules.assign(check=asso_rules["antecedents"].apply(
                                                           lambda x: "XXX" in x)) 
 asso_rules = asso_rules[asso_rules["check"]].sort_values(by="lift",
                                                          ascending=False)
+################################################################################
+
+# CChi2 Test ###################################################################
+#  * Tests if there is a relationship between two categorical variables.
+#  * The data is usually displayed in a cross-tabulation format
+#    with each row representing a level (group) for one variable
+#    and each column representing a level (group) for another variable
+#  * Compares the observed observations to the expected observations
+#  * The H0: There is no relationship between variable one and variable two.
 ################################################################################
 
 
