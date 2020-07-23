@@ -32,6 +32,10 @@ data_pop = pd.read_csv(url_pop, encoding='utf-8')
 url_housing = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/California_housing.csv'
 data_housing = pd.read_csv(url_housing)
 
+# Ex09 Data ####################################################################
+url_clothing = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/Womens_Clothing_Reviews.csv'
+data_clothing = pd.read_csv(url_clothing)
+
 ################################################################################
 ################################################################################
 ################################################################################
