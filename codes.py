@@ -28,6 +28,10 @@ data_ecommerce = pd.read_csv(url_ecommerce)
 url_pop = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/R_pop_stat.csv'
 data_pop = pd.read_csv(url_pop, encoding='utf-8')
 
+# Ex08 Data ####################################################################
+url_housing = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/California_housing.csv'
+data_housing = pd.read_csv(url_housing)
+
 ################################################################################
 ################################################################################
 ################################################################################
@@ -53,6 +57,7 @@ df_elif = df_elif.assign(new_col=df_elif["Col_A"].apply(
 idx = [i for i, values in enumerate(model_result) if values < 0]
 vars_found = ", ".join([X_cols[i] for i in idx])
 
+
 ### log10 계산###################################################################
 series_log = df_log['Col_A'].apply(lambda x: math.log10(x))
 series_revert = series_log.apply(lambda x: 10 ** x)
@@ -64,6 +69,7 @@ df_merge = pd.merge(data_left, data_right[["Col_A", "Col_B"]], how="left",
 # key column이 없고 index 기준으로 merge 할 때:
 df_merge = pd.merge(data_left, data_right[['Col_A']], how='left',
                      left_index=True, right_index=True)
+
 
 ### Pivot_table for Association_rules ##########################################
 pivot = df_pivot.pivot_table(index="index_col", columns="column_col",
@@ -95,6 +101,17 @@ df_dt = df_dt.assign(gap=(df_dt['time2'] - df_dt['time1']).dt.days * 24 * 3600 +
                          (df_dt['time2'] - df_dt['time1']).dt.seconds)
 df_dt = df_dt.assign(pay=df_dt.apply(lambda x:
                              'type1' if x['gap'] >= 3600 else 'type2', axis=1))
+
+
+### Top n value의 index 찾기 ####################################################
+n = 5
+array_original = [5, 3, 7, 1, 2, 9, 6]
+array_sorted = array_original.copy()
+array_sorted.sort() # [1, 2, 3, 5, 6, 7, 9]
+top_n_value = array_sorted[-n] # top_n_value = 3
+
+top_n_idx = [i for i, v in enumerate(array_original) if v >= top_n_value]
+################################################################################
 
 
 ################################################################################
@@ -217,13 +234,14 @@ pred = ols_result.predict(test_X)
 ### Linear Regression ##########################################################
 from sklearn.linear_model import LinearRegression
 
-lr = LinearRegression()
-model = lr.fit(train_X, train_y)  # train_X는 Matrix여야 함 (m X n)
+model = LinearRegression().fit(train_X, train_y)  # train_X는 Matrix여야 함 (mXn)
 
 model.coef_  # coefficient
 model.predict([[1], [2], [10], [50], [100]])  # predict
 model.predict([['a', 'b', 'c']])  # predict
+model.score(train_X, train_y) # 결정계수 R^2
 ################################################################################
+
 
 ### Logistic Regression ########################################################
 from sklearn.linear_model import LogisticRegression
@@ -242,6 +260,20 @@ from sklearn.metrics import mean_squared_error
 
 mse = mean_squared_error(test_y, prict)
 rmse = np.sqrt(mse)
+################################################################################
+
+
+### PCA 주성분 분석 ##############################################################
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+norm_data = StandardScaler().fit_transform(df_pca)
+pca = PCA(n_components=6).fit(norm_data)
+
+pca.explained_variance_  # 변수별 주성분의 크기 (eigen value)
+
+transformed_data = pca.transform(norm_data) # PCA fit 결과에 따른 Data 변환
+transformed_data = pd.DataFrame(transformed_data) # DataFrame으로 변환
 ################################################################################
 
 
