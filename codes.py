@@ -256,6 +256,19 @@ train_y = df_lr['indep']
 lr = LogisticRegression(C=100000, random_state=1234, penalty='l2',
                         solver='newton-cg')
 model = lr.fit(train_X, train_y)
+
+# accuracy 계산
+result = model.predict_proba(test_X)
+result = pd.DataFrame(result)
+criteria = 0.8 # for example
+result = result.assign(estimation=result[1].apply(lambda x:
+                                                 'Y' if x >= criteria else 'N'))
+                                  # column 1 is probability for Y
+test_y = test_y.reset_index()
+result = pd.merge(result, test_y, left_index=True, right_index=True)
+result = result.assign(accuracy=(result['estimation'] == result['fact']) * 1)
+
+Accuracy = result['accuracy'].sum() / result['accuracy'].count()
 ################################################################################
 
 
