@@ -36,6 +36,10 @@ data_housing = pd.read_csv(url_housing)
 url_clothing = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/Womens_Clothing_Reviews.csv'
 data_clothing = pd.read_csv(url_clothing)
 
+# Ex10 Data ####################################################################
+url_imdb = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/imdb.csv'
+data_imdb = pd.read_csv(url_imdb)
+
 ################################################################################
 ################################################################################
 ################################################################################
@@ -213,7 +217,16 @@ df_corr_result = df_corr[['var1', 'var2']].corr(method='pearson')
 
 
 ### K-Means ####################################################################
-//
+from sklearn.cluster import KMeans
+
+cluster = KMeans(n_clusters=7, n_init=1234, random_state=1234).fit(df_kmeans)
+cluster.cluster_centers_
+cluster.labels_
+
+# 특정 inddex의 label 찾기
+label = cluster.labels_[np.where(df_kmeans.index == 1234)[0][0]]
+idx_same_label = [i for i, val in enumerate(cluster.labels_) if val == label]
+val_same_label = df_kmeans[idx_same_label]
 ################################################################################
 
 
