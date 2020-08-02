@@ -1,44 +1,37 @@
 import pandas as pd
 import numpy as np
 import math
+
 ######### ######### ######### ######### ######### ######### ######### ##########
 # Ex02 Data ####################################################################
 url_pur = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ds_purchase_log.csv'
 url_cus = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ds_customer_mst.csv'
 url_pro = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ds_product_mst.csv'
-data_pur = pd.read_csv(url_pur)
-data_cus = pd.read_csv(url_cus)
-data_pro = pd.read_csv(url_pro)
 
 # Ex03 Data ####################################################################
 url_antibio = "https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/Antibiotic_70K_patinets.csv"
-data_antibio = pd.read_csv(url_antibio)
 
 # Ex04 Data ####################################################################
 url_corolla_1 = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/corolla_1.csv'
 url_corolla_2 = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/corolla_2.csv'
-data_corolla1 = pd.read_csv(url_corolla_1)
-data_corolla2 = pd.read_csv(url_corolla_2)
 
 # Ex05 Data ####################################################################
 url_ecommerce = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/ecommerce_transaction.csv'
-data_ecommerce = pd.read_csv(url_ecommerce)
 
 # Ex07 Data ####################################################################
 url_pop = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/R_pop_stat.csv'
-data_pop = pd.read_csv(url_pop, encoding='utf-8')
 
 # Ex08 Data ####################################################################
 url_housing = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/California_housing.csv'
-data_housing = pd.read_csv(url_housing)
 
 # Ex09 Data ####################################################################
 url_clothing = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/Womens_Clothing_Reviews.csv'
-data_clothing = pd.read_csv(url_clothing)
 
 # Ex10 Data ####################################################################
 url_imdb = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/imdb.csv'
-data_imdb = pd.read_csv(url_imdb)
+
+# Ex11 Data ####################################################################
+url_gestures = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/Gestures.csv'
 
 ################################################################################
 ################################################################################
