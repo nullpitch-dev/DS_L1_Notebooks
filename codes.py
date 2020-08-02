@@ -195,6 +195,16 @@ asso_rules = asso_rules.assign(check=asso_rules["antecedents"].apply(
                                                           lambda x: "XXX" in x)) 
 asso_rules = asso_rules[asso_rules["check"]].sort_values(by="lift",
                                                          ascending=False)
+
+# antecedents 또는 consequents 개수로 filtering
+asso_rules = asso_rules.assign(ant_len=asso_rules['antecedents'].apply(
+                                                              lambda x: len(x)))
+asso_rules = asso_rules[asso_rules['ant_len'] == 1]
+
+# lift나 confidence 등 특정 field로 sorting해서 antecedents나 consequents 찾기
+conseq = list(
+  asso_rules[asso_rules['antecedents'] == {'ANTECEDENT'}].sort_values(
+    by='lift', ascending=True).iloc[0, 1])[0]
 ################################################################################
 
 ### CChi2 Test #################################################################
