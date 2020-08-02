@@ -233,6 +233,15 @@ val_same_label = df_kmeans[idx_same_label]
 ################################################################################
 
 
+### KNN ########################################################################
+# Number of Neighbors를 사전 정의하고 (n이라 하면)
+# Training시 Sample data간의 거리와 각 Sample data의 Class를 가지고 있다가
+# Test Data가 들어오면 그 점에서 가장 가까운 n개의 점을 찾고
+# 그 점들 중 가장 다수인 Class로 Classify한다.
+
+################################################################################
+
+
 ### Linear Regression (OSL) ####################################################
 from statsmodels.api import add_constant, OLS
 
@@ -304,6 +313,10 @@ norm_data = StandardScaler().fit_transform(df_pca)
 pca = PCA(n_components=6).fit(norm_data)
 
 pca.explained_variance_  # 변수별 주성분의 크기 (eigen value)
+pca.explained_variance_ratio_  # 변수별 주성분의 비율
+pca.explained_variance_ratio_.sum()  # 추출된 주성분 전체의 설명력(%)
+pca.components_.shape  # 주성분 수 X 원 Column 수
+pca.components_  # 각 주성분별 원 Data의 Eigen Value
 
 transformed_data = pca.transform(norm_data) # PCA fit 결과에 따른 Data 변환
 transformed_data = pd.DataFrame(transformed_data) # DataFrame으로 변환
