@@ -239,6 +239,17 @@ val_same_label = df_kmeans[idx_same_label]
 # Test Data가 들어오면 그 점에서 가장 가까운 n개의 점을 찾고
 # 그 점들 중 가장 다수인 Class로 Classify한다.
 
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors=NO).fit(train_X, train_y)
+pred = knn.predict(test_X)
+pred = pd.DataFrame(pred)
+
+# Accuracy 계산
+result = pd.merge(test_y.reset_index(), pred, left_index=True, right_index=True)
+result = result.rename(columns={'XX': 'fact', 'YY': 'esti'})
+result = result.assign(accu=(result['fact'] == result['esti']) * 1)
+accuracy = result['accu'].sum() / result['accu'].count()
 ################################################################################
 
 
