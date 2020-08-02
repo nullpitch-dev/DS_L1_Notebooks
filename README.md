@@ -1,10 +1,5 @@
 # DS_L1_Notebooks
 
-### [KNN 개념]
-  * Number of Neighbors를 사전 정의하고 (n이라 하면)
-  * Training시 Sample data간의 거리와 각 Sample data의 Class를 가지고 있다가
-  * Test Data가 들어오면 그 점에서 가장 가까운 n개의 점을 찾고 그 점들 중 가장 다수인 Class로 Classify한다.  
-
 ### [Odds Ratio 개념]
   * Odds Ratio = P(success) / P(failure)  
   * Logistic Regression의 coef는 log(p / (1 - p))이므로, exp(coef)를 한 값은 Odds Ratio  
