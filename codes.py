@@ -34,6 +34,10 @@ idx = [i for i, values in enumerate(model_result) if values < 0]
 vars_found = ", ".join([X_cols[i] for i in idx])
 
 
+### fillna #####################################################################
+df[['col1', 'col2', 'col3']] = df[['col1', 'col2', 'col3']].fillna(0)
+
+
 ### log10 계산###################################################################
 series_log = df_log['Col_A'].apply(lambda x: math.log10(x))
 series_revert = series_log.apply(lambda x: 10 ** x)
