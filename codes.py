@@ -38,6 +38,12 @@ vars_found = ", ".join([X_cols[i] for i in idx])
 df[['col1', 'col2', 'col3']] = df[['col1', 'col2', 'col3']].fillna(0)
 
 
+### groupby ####################################################################
+groupby('col').agg({'col1': 'fun1', 'col2': 'fun2'})
+# function 종류
+# count, first, last, min, max, count, nunique 등
+
+
 ### log10 계산###################################################################
 series_log = df_log['Col_A'].apply(lambda x: math.log10(x))
 series_revert = series_log.apply(lambda x: 10 ** x)
