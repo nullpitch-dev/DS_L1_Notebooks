@@ -70,6 +70,11 @@ df_rename = df_rename.rename(columns={'col_a_before': 'col_a_after',
                                       'col_b_before': 'col_b_after'})
 
 
+### set_index ##################################################################
+df_reset_index = df_original.reset_index()
+df_restored_index = df_reset_index.set_index(keys='index')
+
+
 ### to_datetime  ###############################################################
 df_dt = pd.DataFrame(['2017-01-07', '2019-05-30', '2020-10-05'],
                      columns=['date'])
