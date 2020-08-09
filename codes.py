@@ -361,3 +361,5 @@ url_gestures = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master
 # Ex12 Data ####################################################################
 url_baseball = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/baseball.csv'
 
+# Ex13 Data ####################################################################
+url_game = 'https://raw.githubusercontent.com/nullpitch-dev/hj_public/master/13.csv'
