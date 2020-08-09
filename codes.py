@@ -11,6 +11,12 @@ df_concat = pd.concat([df1, df2])
 df_dropna = df_original.dropna(subset=['col1', 'col2'])
 
 
+### drop_duplicate #############################################################
+df_dup = df_dup.sort_values(by=['col1', 'col2', 'col3'],
+                            ascending=['True', 'True', 'True'])
+df_unique = df_dup.drop_duplicates(subset=['col1', 'col2'], keep='last')
+
+
 ### dummy variables ############################################################
 df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_],
                           drop_first=True)
