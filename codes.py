@@ -7,6 +7,10 @@ import math
 df_concat = pd.concat([df1, df2])
 
 
+### dropna #####################################################################
+df_dropna = df_original.dropna(subset=['col1', 'col2'])
+
+
 ### dummy variables ############################################################
 df_dummy = pd.get_dummies(df_original, columns=df_original.columns[_from_:_to_],
                           drop_first=True)
