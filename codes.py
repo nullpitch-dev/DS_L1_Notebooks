@@ -44,7 +44,11 @@ pivot = (pivot >= 1) + 0  # 1 이상은 1로 0은 0으로 만드는 방법
 
 
 ### Rank  ######################################################################
-df_rank = df_rank.assign(rank=df_rank.rank(ascending=False, method="min"))
+df_rank = df_rank.assign(rank=df_rank['col'].rank(ascending=False, method="min"))
+# method 의미 (1등이 1명, 2등이 2명, 3등이 1명이라면)
+# dense : 1, 2, 2, 3
+# min   : 1, 2, 2, 4
+# max   : 1. 3, 3, 4
 
 
 ### rename #####################################################################
