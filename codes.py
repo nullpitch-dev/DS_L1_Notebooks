@@ -45,6 +45,12 @@ groupby('col').agg({'col1': 'fun1', 'col2': 'fun2'})
 df_groupby = df_orig.groupby('col_by').agg({'col_val': lambda x: set(list(x))})
 
 
+### in #########################################################################
+# list에 특정 문자열이 있는지 확인
+df = df.assign(check=df.col.apply(lambda x: 'Y' if ('A' in x) & ('B' in x)
+                                                else 'N'))
+
+
 ### log10 계산###################################################################
 series_log = df_log['Col_A'].apply(lambda x: math.log10(x))
 series_revert = series_log.apply(lambda x: 10 ** x)
