@@ -40,8 +40,9 @@ df[['col1', 'col2', 'col3']] = df[['col1', 'col2', 'col3']].fillna(0)
 
 ### groupby ####################################################################
 groupby('col').agg({'col1': 'fun1', 'col2': 'fun2'})
-# function 종류
-# count, first, last, min, max, count, nunique 등
+# function 종류 : count, first, last, min, max, count, nunique 등
+# 중복 제거된 항목 추출
+df_groupby = df_orig.groupby('col_by').agg({'col_val': lambda x: set(list(x))})
 
 
 ### log10 계산###################################################################
