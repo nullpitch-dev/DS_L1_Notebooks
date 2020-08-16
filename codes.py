@@ -5,6 +5,8 @@ import math
 
 ### concat #####################################################################
 df_concat = pd.concat([df1, df2])
+# column을 row로 변환
+df_concat = pd.concat([df['colA'], df['colB'], df['colC']], axis=0)
 
 
 ### dropna #####################################################################
