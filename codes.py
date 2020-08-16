@@ -62,6 +62,8 @@ df_merge = pd.merge(data_left, data_right[["Col_A", "Col_B"]], how="left",
 # key column이 없고 index 기준으로 merge 할 때:
 df_merge = pd.merge(data_left, data_right[['Col_A']], how='left',
                      left_index=True, right_index=True)
+# 복수개의 column을 기준으로 merge 할 때:
+df_merge = pd.merge(data_left, data_right, how='inner', on=['Col_A', 'Col_B'])f
 
 
 ### Pivot_table for Association_rules ##########################################
