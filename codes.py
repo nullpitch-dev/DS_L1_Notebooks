@@ -288,6 +288,10 @@ model.coef_  # coefficient
 model.predict([[1], [2], [10], [50], [100]])  # predict
 model.predict([['a', 'b', 'c']])  # predict
 model.score(train_X, train_y) # 결정계수 R^2
+
+# mean squared error
+from sklearn.metrics import mean_squared_error
+mean_squared_error(y_true, y_pred)
 ################################################################################
 
 
