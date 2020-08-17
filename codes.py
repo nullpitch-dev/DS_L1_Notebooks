@@ -53,7 +53,12 @@ df = df.assign(check=df.col.apply(lambda x: 'Y' if ('A' in x) & ('B' in x)
                                                 else 'N'))
 
 
-### log10 계산###################################################################
+### list 연산 ###################################################################
+list_a = [3, 4, 5]
+list(np.array(list_a) + 1)  # [4, 5, 6]
+
+
+### log10 계산 ##################################################################
 series_log = df_log['Col_A'].apply(lambda x: math.log10(x))
 series_revert = series_log.apply(lambda x: 10 ** x)
 
